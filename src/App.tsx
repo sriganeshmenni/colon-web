@@ -292,8 +292,10 @@ const FloatingIDE = () => {
 
 // --- Main App Component ---
 export default function App() {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
   const handleDownload = (platform) => {
-    window.open(`http://localhost:5000/download/${platform}`);
+    window.open(`${backendUrl}/download/${platform}`);
   };
 
   return (
