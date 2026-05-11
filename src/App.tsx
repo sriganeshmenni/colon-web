@@ -101,7 +101,7 @@ const ParticleNetwork = () => {
         const cos = Math.cos(angle);
         const sin = Math.sin(angle);
         const nx = this.x * cos - this.z * sin;
-        const nz = this.z * cos + this.x * sin;
+        this.z = this.z * cos + this.x * sin;
         this.x = nx;
       }
 
@@ -294,7 +294,7 @@ const FloatingIDE = () => {
 export default function App() {
   const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 
-  const handleDownload = (platform) => {
+  const handleDownload = (platform: string) => {
     window.open(`${backendUrl}/download/${platform}`);
   };
 
